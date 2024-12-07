@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--En este xml nosotros colocamos 3 botones de forma responsiva,
+    pero ademas lo mas importante es que asignamos los IDs para poder llamarlos a la
+    parte logica, a parte de los botones se muestra una previsualizacion de lo que seria
+    la camara, la pantalla negra representa lo que va a grabar la camara
+    por eso trajimos la vista camera.view.PreviewView-->
+    <androidx.camera.view.PreviewView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/preview"/>
+    <!--Tomar foto-->
+    <Button
+        android:id="@+id/img_capture_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Take a photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <!--Cambiar la camara-->
+    <Button
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_capture_btn"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!--Ver la galeria-->
+    <Button
+        android:id="@+id/gallery_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_capture_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
